@@ -2,6 +2,8 @@ window.onload = function() {
     var canvas = document.getElementById("canvas");
     var context = canvas.getContext("2d");
     var fileInput = document.getElementById("image");
+    var topText = document.getElementById("topText");
+    var bottomText = document.getElementById("bottomText");
     var img = document.createElement('img');
 
     fileInput.onchange = function(evt){
@@ -10,7 +12,7 @@ window.onload = function() {
         var reader = new FileReader();
         // Read in the image file as a data URL.
         reader.onload = function(){
-                img.onload = function(){
+                img.onload = function(){   
                     canvas.width = img.width;
                     canvas.height = img.height;
                     context.drawImage(img, 0,0);
@@ -22,5 +24,8 @@ window.onload = function() {
             }    
             reader.readAsDataURL(file);
     }
+    topText.addEventListener("input", (e) => {
+        
+    });
 };
 
