@@ -25,6 +25,16 @@ window.onload = function() {
             reader.readAsDataURL(file);
     }
     topText.addEventListener("input", (e) => {
+        console.log(e.target.value);
+        var text = e.target.value;
+        if(text == ""){
+            context.clearRect(0,0,canvas.width,canvas.height);
+            fileInput.value = "";
+        }else{
+            context.font = "30px Arial White";
+            context.fillStyle = "white";
+            context.fillText(text,10,50);
+        }
         
     });
 };
